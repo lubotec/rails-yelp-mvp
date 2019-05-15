@@ -1,5 +1,5 @@
 <div class="container">
-  <p><%= link_to 'Back to restaurant', restaurant_path(@restaurant) %></p>
+  <p><%= link_to 'Back to restaurant', restaurant_path(@restaurant), class: "btn btn-primary" %></p>
 
   <div>
     <%= render 'form', restaurant: @restaurant, review: @review %>
