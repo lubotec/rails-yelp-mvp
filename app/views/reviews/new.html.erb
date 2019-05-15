@@ -1,13 +1,8 @@
 <div class="container">
-  <h1>Yelp for Beginners</h1>
   <p><%= link_to 'Back to restaurant', restaurant_path(@restaurant) %></p>
 
   <div>
-    <%= simple_form_for [@restaurant, @review] do |f| %>
-    <%= f.input :content %>
-    <%= f.input :rating %>
-    <%= f.submit "Add a review", class: "btn btn-primary" %>
-    <% end %>
+    <%= render 'form', restaurant: @restaurant, review: @review %>
   </div>
 
 </div>

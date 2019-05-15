@@ -1,16 +1,16 @@
 <div class="container">
 
-<h1>Yelp for Beginners</h1>
-<p><%= link_to 'Back to list', restaurants_path %></p>
+  <p><%= link_to 'Back to list', restaurants_path %></p>
 
-<div class="card d-flex p-3 m-3">
-  <h3 class="mb-3"><%= @restaurant.name %></h3>
-  <p>Address: <%= @restaurant.address %></p>
-  <p>Phone: <%= @restaurant.phone_number %></p>
-  <p>Category: <%= @restaurant.category %></p>
-</div>
+  <div class="card d-flex p-3 m-3">
+    <h3 class="mb-3"><%= @restaurant.name %></h3>
+    <p>Address: <%= @restaurant.address %></p>
+    <p>Phone: <%= @restaurant.phone_number %></p>
+    <p>Category: <%= @restaurant.category %></p>
+  </div>
 
-  <h4>Reviews</h2>
+  <br>
+  <h4>Reviews</h4>
   <p><%= link_to 'Add a review', new_restaurant_review_path(@restaurant) %></p>
 
   <% @restaurant.reviews.each do |review| %>
@@ -19,5 +19,12 @@
       <p><%= review.content %></p>
     </div>
   <% end %>
+
+  <br>
+  <h4 >Add a review</h4>
+
+  <div>
+    <%= render 'reviews/form', restaurant: @restaurant, review: @review %>
+  </div>
 
 </div>

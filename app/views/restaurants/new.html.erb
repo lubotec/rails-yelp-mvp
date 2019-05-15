@@ -1,5 +1,4 @@
 <div class="container">
-  <h1>Yelp for Beginners</h1>
   <p><%= link_to 'Back to list', restaurants_path %></p>
 
   <div>
@@ -7,7 +6,7 @@
     <%= f.input :name %>
     <%= f.input :address %>
     <%= f.input :phone_number %>
-    <%= f.input :category %>
+    <%= f.input :category, as: :select, collection: ["chinese", "italian", "japanese", "french", "belgian"] %>
     <%= f.submit "Add a restaurant", class: "btn btn-primary" %>
     <% end %>
   </div>
