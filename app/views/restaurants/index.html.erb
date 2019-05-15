@@ -1,0 +1,16 @@
+
+<div class="container">
+<h1>Yelp for Beginners</h1>
+
+<h4><%= link_to 'Add a restaurant', new_restaurant_path %></h4>
+
+<% @restaurants.each do |restaurant| %>
+  <div class="card d-flex p-3 m-3">
+    <h3 class="mb-3"><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
+<!--     <p>Address: <%= restaurant.address %></p>
+    <p>Phone: <%= restaurant.phone_number %></p> -->
+    <p>Category: <%= restaurant.category.capitalize %></p>
+  </div>
+<% end %>
+
+</div>
